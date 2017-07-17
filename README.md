@@ -1,3 +1,8 @@
+## Fork Vue Table 2 by Matfish, witch a leverage modification to comport Maestro Server Authetication.
+
+-- Axios is obrigatory
+-- Using Login Client Authetication - Client APP 
+
 # Vue Tables 2
 
 [![npm version](https://badge.fury.io/js/vue-tables-2.svg)](https://badge.fury.io/js/vue-tables-2) [![GitHub stars](https://img.shields.io/github/stars/matfish2/vue-tables-2.svg)](https://github.com/matfish2/vue-tables-2/stargazers) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/matfish2/vue-tables-2/master/LICENSE)
