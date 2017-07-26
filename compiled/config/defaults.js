@@ -9,7 +9,7 @@ module.exports = function () {
         cancelLabel: 'Clear'
       }
     },
-    perPage: 10,
+    perPage: 25,
     perPageValues: [10, 25, 50, 100],
     params: {},
     sortable: true,
@@ -33,16 +33,12 @@ module.exports = function () {
       loading: 'Loading...',
       defaultOption: 'Select {column}'
     },
-    sortIcon: {
-      base: 'glyphicon',
-      up: 'glyphicon-chevron-up',
-      down: 'glyphicon-chevron-down'
-    },
+    sortIcon: { base: 'fa', up: 'fa-arrow-up', down: 'fa-arrow-down' },
     customSorting: {},
     multiSorting: {},
     clientMultiSorting: true,
     serverMultiSorting: false,
-    filterByColumn: false,
+    filterByColumn: true,
     highlightMatches: false,
     orderBy: false,
     footerHeadings: false,
@@ -54,7 +50,7 @@ module.exports = function () {
     headers: {},
     childRow: false,
     childRowKey: 'id',
-    uniqueKey: 'id',
+    uniqueKey: '_id',
     requestAdapter: function requestAdapter(data) {
       return data;
     },
@@ -74,7 +70,7 @@ module.exports = function () {
     },
     rowClassCallback: false,
     config: false,
-    saveState: false,
+    saveState: true,
     storage: 'local',
     columnsClasses: {}
   };
