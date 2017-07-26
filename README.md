@@ -1,7 +1,7 @@
 ## Fork Vue Table 2 by Matfish, witch a leverage modification to comport Maestro Server Authetication.
 
 -- Axios is obrigatory
--- Using Login Client Authetication - Client APP 
+-- Using Login Client Authetication - Client APP
 
 # Vue Tables 2
 
@@ -295,7 +295,7 @@ If you are using Vue 2.1.0 and above, you can use [scoped slots](https://vuejs.o
 Child rows allow for a custom designed output area, namely a hidden child row underneath each row, whose content you are free to set yourself.
 
 When using the `childRow` option you must pass a unqiue `id` property for each row, which is used to track the current state.
-If your identifer key is not `id`, use the `uniqueKey` option to set it.
+If your identifer key is not `_id`, use the `uniqueKey` option to set it.
 
 The syntax is identincal to that of templates:
 
@@ -408,7 +408,7 @@ Fires off if the server returns an invalid code. Sends through the error
 
 Fires off after a row was clicked. sends through the row and the mouse event.
 When using the client component, if you want to recieve the *original* row, so that it can be directly mutated, you must have a unique row identifier.
-The key defaults to `id`, but can be changed using the `uniqueKey` option.
+The key defaults to `_id`, but can be changed using the `uniqueKey` option.
 
 # Custom Filters
 
@@ -566,22 +566,22 @@ orderBy.column | String | initial column to sort by | First column
 pagination.chunk | Number | maximum pages in a chunk of pagination | `pagination: { chunk:10 }`
 pagination.dropdown | Boolean | use a dropdown select pagination next to the records-per-page list, instead of links at the bottom of the table. | `pagination: { dropdown:false }`
 params (server-side) | Object | Additional parameters to send along with the request | `{}`
-perPage | number | Initial records per page | `10`
+perPage | number | Initial records per page | `25`
 perPageValues | Array | Records per page options | `[10,25,50,100]`
 requestAdapter (server-side) | Function | Set a custom request format | `function(data) { return data; }`
 requestKeys (server-side) | Object | Set your own request keys | `{ query:'query', limit:'limit', orderBy:'orderBy', ascending:'ascending', page:'page', byColumn:'byColumn' }`
 responseAdapter (server-side) | Function | Transform the server response to match the format expected by the client. This is especially useful when calling a foreign API, where you cannot control the response on the server-side | `function(resp) { return { data: resp.data, count: resp.count } }`
 rowClassCallback | Function | Add dynamic classes to table rows.<br><br> E.g function(row) { return `row-${row.id}`} <br><br>This can be useful for manipulating the appearance of rows based on the data they contain | `false`
-saveState | Boolean | Constantly save table state and reload it each time the component mounts. When setting it to true, use the `name` prop to set an identifier for the table | `false`
+saveState | Boolean | Constantly save table state and reload it each time the component mounts. When setting it to true, use the `name` prop to set an identifier for the table | `true`
 serverMultiSorting | Boolean | Enable multiple columns sorting using Shift + Click on the server component | `false`
 skin | String | Space separated Bootstrap table styling classes | `table-striped table-bordered table-hover`
-sortIcon | String | Sort icon classes | `{ base:'glyphicon', up:'glyphicon-chevron-up', down:'glyphicon-chevron-down' }`
+sortIcon | String | Sort icon classes | `{ base:'fa', up:'fa-arrow-up', down:'fa-arrow-down' }`
 sortable | Array |  Sortable columns | All columns
 storage | String | Which persistance mechanism should be used when saveState is set to true: `local` - localStorage. `session` - sessionStorage | `local`
 templates | Object | See [documentation](#templates) | {}
 texts | Object | Table default labels:<br><br>`{ count:'Showing {from} to {to} of {count} records {count} records One record', filter:'Filter Results:',filterPlaceholder:'Search query', limit:'Records:', noResults:'No matching records', page:'Page:', // for dropdown pagination filterBy: 'Filter by {column}', // Placeholder for search fields when filtering by column loading:'Loading...', // First request to server defaultOption:'Select {column}' // default option for list filters }`
 toMomentFormat (client-side) | String | transform date columns string values to momentjs objects using this format. If this option is not used the consumer is expected to pass momentjs objects himself | `false`
-uniqueKey | String | The key of a unique identifier in your dataset, used to track the child rows, and return the original row in row click event | `id`
+uniqueKey | String | The key of a unique identifier in your dataset, used to track the child rows, and return the original row in row click event | `_id`
 
 > Note: You can check this [demo](https://jsfiddle.net/matfish2/823jzuzc/) of the Client Side implementation and a nicer way to go over the options.
 
