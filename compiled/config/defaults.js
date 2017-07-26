@@ -51,6 +51,7 @@ module.exports = function () {
       dropdown: false,
       chunk: 10
     },
+    headers: {},
     childRow: false,
     childRowKey: 'id',
     uniqueKey: 'id',

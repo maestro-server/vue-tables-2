@@ -19,7 +19,7 @@ module.exports = function (promiseOnly) {
 
   this.dispatch('loading', data);
 
-  var promise = this.sendRequest(data);
+  var promise = this.sendRequest(data, this.opts.headers);
 
   if (promiseOnly) return promise;
 
