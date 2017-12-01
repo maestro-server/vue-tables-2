@@ -1,7 +1,7 @@
 {
   "name": "maestro-vue-tables-2",
   "description": "Vue.js 2 grid components - Maestro Client",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "keywords": [
     "vue2",
     "vuex",
