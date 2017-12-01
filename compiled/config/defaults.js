@@ -71,7 +71,7 @@ module.exports = function () {
     rowClassCallback: false,
     config: false,
     saveState: true,
-    storage: 'local',
+    storage: 'session',
     columnsClasses: {}
   };
 };
