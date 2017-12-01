@@ -5,43 +5,37 @@ module.exports = function (h, that) {
   return function (column) {
 
     var options = [];
+    var optNew = [];
     var selected = void 0;
 
     var search = that.source == 'client' ? that.search.bind(that, that.data) : that.serverSearch.bind(that);
 
+    var eInput = function eInput(e) {
+      that.query[column] = e;
+      search(this);
+    };
+
     that.opts.listColumns[column].map(function (option) {
       selected = option.text == that.query[column] && that.query[column] !== '';
-      options.push(h(
-        'option',
-        {
-          attrs: { value: option.id, selected: selected }
-        },
-        [option.text]
-      ));
+      optNew.push(option.text);
     });
 
     return h(
       'div',
-      { 'class': 'VueTables__list-filter',
+      { 'class': 'minWd100 wd100 VueTables__list-filter',
         attrs: { id: 'VueTables__' + column + '-filter' }
       },
       [h(
-        'select',
+        'bs-select',
         { 'class': 'form-control',
           on: {
-            change: search
+            input: eInput
           },
           attrs: {
             name: 'vf__' + column,
             value: that.query[column] }
         },
-        [h(
-          'option',
-          {
-            attrs: { value: '' }
-          },
-          [that.display('defaultOption', { column: that.opts.headings[column] ? that.opts.headings[column] : column })]
-        ), options]
+        [':options="optNew"']
       )]
     );
   };
