@@ -10,7 +10,7 @@ module.exports = function (h, that) {
     var search = that.source == 'client' ? that.search.bind(that, that.data) : that.serverSearch.bind(that);
 
     that.opts.listColumns[column].map(function (option) {
-      selected = option.id == that.query[column] && that.query[column] !== '';
+      selected = option.text == that.query[column] && that.query[column] !== '';
       options.push(h(
         'option',
         {
