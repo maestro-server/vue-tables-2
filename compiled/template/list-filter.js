@@ -27,7 +27,8 @@ module.exports = function (h, that) {
       },
       [h(
         'bs-select',
-        { 'class': 'form-control',
+        {
+          'class': 'minWd100 wd100',
           on: {
             input: eInput
           },
@@ -35,7 +36,7 @@ module.exports = function (h, that) {
             name: 'vf__' + column,
             value: that.query[column] }
         },
-        [':options="optNew"']
+        ['options=', optNew]
       )]
     );
   };
