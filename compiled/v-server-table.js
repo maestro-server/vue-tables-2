@@ -167,5 +167,5 @@ exports.install = function (Vue, globalOptions, useVuex, customTemplate) {
 
   }, state);
 
-  Vue.component('v-server-table', server);
+  Vue.component('bs-table-server', server);
 };

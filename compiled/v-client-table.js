@@ -155,5 +155,5 @@ exports.install = function (Vue, globalOptions, useVuex, customTemplate) {
 
   client = _merge2.default.recursive(client, state);
 
-  Vue.component('v-client-table', client);
+  Vue.component('bs-table-client', client);
 };

@@ -34,9 +34,11 @@ module.exports = function (h, that) {
           },
           attrs: {
             name: 'vf__' + column,
-            value: that.query[column] }
+            value: that.query[column],
+            options: optNew
+          }
         },
-        ['options=', optNew]
+        []
       )]
     );
   };
