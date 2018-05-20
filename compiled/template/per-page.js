@@ -8,7 +8,7 @@ module.exports = function (h, that) {
     var id = 'VueTables__limit_' + that.id;
     return h(
       'div',
-      { 'class': 'form-group form-inline pull-right VueTables__limit' },
+      { 'class': 'form-group form-inline pull-right VueTables__limit hidden-xs' },
       [h(
         'label',
         {
